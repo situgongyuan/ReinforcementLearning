@@ -35,7 +35,7 @@ class DPAgent(Agent):
         self.improve_policy()
 
     """
-    one iteration of policy evaluation of Bellman equation
+    one iteration of policy evaluation of Bellman equation,basically we can run many iterations until converge
     """
     def evaluate_policy(self):
         values = np.zeros((self.ns,))
