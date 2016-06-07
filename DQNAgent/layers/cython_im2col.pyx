@@ -24,7 +24,7 @@ def im2col(np.ndarray[DTYPE_t, ndim=4] x, int field_height,
             ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
 
     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(
-            (N * HH * WW,C * field_width * field_height))
+            (N * HH * WW,C * field_width * field_height),dtype=x.dtype)
 
     im2col_inner(cols,x_padded,N,C,HH,WW,field_height,field_width,padding,stride)
     return cols
