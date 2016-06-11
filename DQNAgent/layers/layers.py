@@ -570,7 +570,7 @@ def softmax_loss(x, y):
 def mean_square(x, y, a):
 	N = x.shape[0]
 	q_action = x * a
-	loss = np.mean((q_action - y) ** 2)
+	loss = np.sum((q_action - y) ** 2) / N
 	dx = 2.0 / N * (q_action - y)
 	return loss, dx
 
